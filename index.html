@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Fake Review Detection System</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #eef2ff, #f8fafc);
+        color: #1e293b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 15px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 850px;
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .icon {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto 15px;
+        border-radius: 50%;
+        background: #2563eb;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 0;
+        font-size: 32px;
+        color: #0f172a;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #64748b;
+        margin: 12px auto 30px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #334155;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 16px;
+        font-size: 16px;
+        font-family: inherit;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        resize: vertical;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    textarea:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+        margin-top: 18px;
+        font-size: 17px;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        background: #2563eb;
+        color: white;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #1d4ed8;
+        transform: translateY(-1px);
+    }
+
+    .review {
+        margin-top: 28px;
+        padding: 20px;
+        background: #f8fafc;
+        border-left: 5px solid #2563eb;
+        border-radius: 10px;
+    }
+
+    .review strong {
+        color: #0f172a;
+    }
+
+    .review p {
+        margin-bottom: 0;
+        line-height: 1.6;
+        color: #475569;
+    }
+
+    .result {
+        margin-top: 20px;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        color: #1e40af;
+        border-radius: 12px;
+    }
+
+    .footer {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 13px;
+        color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+        .container {
+            padding: 25px 20px;
+        }
+
+        h1 {
+            font-size: 25px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<div class="icon">🔍</div>
+
+<h1>Fake Review Detection System</h1>
+
+<p class="subtitle">
+    Analyze product reviews using an intelligent detection system
+    and identify whether a review is likely genuine or fake.
+</p>
+
+<form method="POST" action="/">
+
+    <label for="review">Enter Product Review</label>
+
+    <textarea
+        id="review"
+        name="review"
+        placeholder="Write your product review here..."
+        rows="8"
+        required>{{ review }}</textarea>
+
+    <button type="submit">
+        🔎 Analyze Review
+    </button>
+
+</form>
+
+{% if review %}
+    <div class="review">
+        <strong>Your Review</strong>
+        <p>{{ review }}</p>
+    </div>
+{% endif %}
+
+{% if result %}
+    <div class="result">
+        {{ result }}
+    </div>
+{% endif %}
+
+<div class="footer">
+    Fake Review Detection System • Minor Project
+</div>
+```
+
+</div>
+
+</body>
+</html>
